@@ -1,0 +1,28 @@
+﻿@model Workspace.Models.Document
+
+<h2>Редактирование пользователя</h2>
+<form asp-action="edit" asp-controller="home" asp-route-id="@Model.Id">
+    <p>
+        <label asp-for="Date">Дата</label><br />
+        <input type="text" asp-for="Date" />
+    </p>
+    <p>
+        <label asp-for="Content">Имя</label><br />
+        <input type="text" asp-for="Content" />
+    </p>
+    <p>
+        <label asp-for="Status">Статус</label><br />
+        <input type="text" asp-for="Status" />
+    </p>
+    <p>
+        <label asp-for="Changes">Вправки</label><br />
+        <input type="text" asp-for="Changes" />
+    </p>
+    <p>
+        <label asp-for="Type">Тип документа</label><br />
+        <input type="text" asp-for="Type" />
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+</form>

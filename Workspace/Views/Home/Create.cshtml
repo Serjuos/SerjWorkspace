@@ -1,0 +1,27 @@
+﻿@model Workspace.Models.Document
+<h2>Добавить новый документ</h2>
+<form asp-action="create" asp-controller="Home">
+    <p>
+        <label asp-for="Date">Дата</label><br />
+        <input type="text" asp-for="Date" />
+    </p>
+    <p>
+        <label asp-for="Content">Содержание</label><br />
+        <input type="text" asp-for="Content" />
+    </p>
+    <p>
+        <label asp-for="Status">Статус</label><br />
+        @Html.DropDownListFor(m => m.Status, new SelectList(ViewBag.statuses,"Id","Name"))
+    </p>
+    <p>
+        <label asp-for="Changes">Вправки</label><br />
+        <input type="text" asp-for="Changes" />
+    </p>
+    <p>
+        <label asp-for="Type">Тип документа</label><br />
+        @Html.DropDownList("typeSelect", new SelectList(ViewBag.types,"Id","Name"))
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+</form>
